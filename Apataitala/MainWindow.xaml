@@ -7,28 +7,44 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListView Name="Spisok" HorizontalAlignment="Left" Height="258" Margin="66,78,0,0" VerticalAlignment="Top" Width="205">
+        <ListView x:Name="Cities_ListView" HorizontalAlignment="Left" Height="295" VerticalAlignment="Top" Width="160" Margin="25,50,0,0">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
                         <TextBlock Text="{Binding Name}"/>
-                        <TextBlock Text="  "/>
-
+                        <TextBlock Text=" "/>
                         <TextBlock Text="{Binding TimeA}"/>
-                        <TextBlock Text=" ч. "/>
+                        <TextBlock Text=" "/>
+                        <TextBlock Text="{Binding TimeB}"/>
+                        <TextBlock Text=" "/>
+                        <TextBlock Text="{Binding TimeC}"/>
+                        <TextBlock Text=" "/>
+                        <TextBlock Text="{Binding TimeD}"/>
+                        <TextBlock Text=" "/>
+                        <TextBlock Text="{Binding TimeI}"/>
+                        <TextBlock Text=" "/>
+                        <TextBlock Text="{Binding TimeF}"/>
+                        <TextBlock Text=" "/>
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ListView HorizontalAlignment="Left" Height="258" Margin="372,78,0,0" VerticalAlignment="Top" Width="311">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
+
+        <Button x:Name="Timetable_Button" Content="Подгрузка информации" HorizontalAlignment="Left" Margin="230,50,0,0" VerticalAlignment="Top" Width="150" Height="30" Click="Timetable_Button_Click"/>
+
+        <Button  Content="Создание расписания" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="430,50,0,0" Height="30" Click="Timetable_Button_Click"/>
+        <ListView HorizontalAlignment="Left" Height="220" Margin="230,120,0,0" VerticalAlignment="Top" Width="395">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding name}"/>
+                        <TextBlock Text=" "/>
+                        <TextBlock Text="{Binding time}"/>
+                        <TextBlock Text=" часа"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        <Button Content="Добавить файл" HorizontalAlignment="Left" Margin="104,357,0,0" VerticalAlignment="Top" Width="132" Height="28" RenderTransformOrigin="0.504,0.363" Click="Vybrat"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="468,357,0,0" VerticalAlignment="Top" Width="132" Height="28"/>
 
     </Grid>
 </Window>

@@ -70,8 +70,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modeli\Class1.cs" />
+    <Compile Include="Modeli\Class2.cs" />
     <Compile Include="Modeli\Gorod.cs" />
     <Compile Include="Modeli\Goroda.cs" />
+    <Compile Include="Modeli\Interface1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

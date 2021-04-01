@@ -11,7 +11,7 @@ namespace Apataitala.Kontroller
         public static List<int> rukzakproblem(int[] time, int summ)
         {
             List<int> rukzak = new List<int>();
-            int n = time.Length;
+            /*int n = time.Length;
             int[,] F = new int[summ + 1, n + 1];
             for (int i = 1; i <= n; i++)
             {
@@ -41,7 +41,7 @@ namespace Apataitala.Kontroller
                     a -= time[k - 1];
                 }
             }
-            rukzak.Add(F[summ, n]);
+            rukzak.Add(F[summ, n]);*/
             return rukzak;
         }
     }

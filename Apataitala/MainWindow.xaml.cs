@@ -34,10 +34,13 @@ namespace Apataitala
         int[] timeD;
         int[] timeI;
         int[] timeF;
-        public List<Goroda> Chasy = new List<Goroda>();
+
+        public List<Goroda> List_Cities = new List<Goroda>();
+        string Path_inf; int numer_;
         public List<int> GorodaIndexes = new List<int>();
 
-        private void Vybrat(object sender, RoutedEventArgs e)
+
+        private void Timetable_Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -60,15 +63,15 @@ namespace Apataitala
                 timeD = new int[SpisokGorodov.Count];
                 timeI = new int[SpisokGorodov.Count];
                 timeF = new int[SpisokGorodov.Count];
-                Chasy.Clear();
-                Spisok.ItemsSource = null;
+                List_Cities.Clear();
+                Cities_ListView.ItemsSource = null;
                 for (int i = 0; i < SpisokGorodov.Count; i++)
                 {
                     if (SpisokGorodov[i] != "")
                     {
                         string[] data = new string[7];
                         data = SpisokGorodov[i].Split(':');
-                        Chasy.Add(new Gorod(data[0], Int32.Parse(data[1]), Int32.Parse(data[2]), Int32.Parse(data[3]), Int32.Parse(data[4]), Int32.Parse(data[5]), Int32.Parse(data[6])));
+                        List_Cities.Add(new Gorod(data[0], Int32.Parse(data[1]), Int32.Parse(data[2]), Int32.Parse(data[3]), Int32.Parse(data[4]), Int32.Parse(data[5]), Int32.Parse(data[6])));
                         timeA[i] = Int32.Parse(data[1]);
                         timeB[i] = Int32.Parse(data[2]);
                         timeC[i] = Int32.Parse(data[3]);
@@ -77,7 +80,7 @@ namespace Apataitala
                         timeF[i] = Int32.Parse(data[6]);
                     }
                 }
-                Spisok.ItemsSource = Chasy;
+                Cities_ListView.ItemsSource = List_Cities;
             }
             catch (Exception)
             {
@@ -85,6 +88,4 @@ namespace Apataitala
             }
         }
     }
-   
- 
 }
